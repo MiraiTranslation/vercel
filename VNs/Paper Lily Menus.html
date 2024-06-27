@@ -216,7 +216,7 @@
 							<ul>
 								<li class="active"><a href="../index.html">Homepage</a></li>
 								<li><a href="../jogos/lista.html">Lista de Mods</a></li>
-								<li><a href="https://discord.gg/3PB24jt">Discord</a></li>
+								<li><a href="https://discord.gg/mirai-translations-603325287832354855">Discord</a></li>
 							</ul>
 						</div>
 					</div>
@@ -258,5 +258,23 @@
 		<script src="../js/jquery.slicknav.js"></script>
 		<script src="../js/owl.carousel.min.js"></script>
 		<script src="../js/main.js"></script>
+		<script>
+			swal({
+				title: "Atenção",
+				text:
+					"Você quer entrar na sessão +18? Nós não iremos nos responsabilizar por quaisquer danos!",
+				icon: "warning",
+				buttons: true,
+				dangerMode: true,
+			}).then((willDelete) => {
+				if (willDelete) {
+					swal("Bem vindo a sessão +18", {
+						icon: "success",
+					})
+				} else {
+					window.location.href = "./index.html"
+				}
+			})
+		</script>
 	</body>
 </html>
