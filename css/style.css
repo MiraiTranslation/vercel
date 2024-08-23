@@ -2160,7 +2160,7 @@ ol {
 	}
 
 	.anime__details__sidebar {
-		padding-top: 50px;
+		padding-top: 500px;
 	}
 
 	.btn__all {
@@ -2307,3 +2307,357 @@ ol {
 		padding: 18px 20px 20px;
 	}
 }
+
+
+/* Estilos gerais do cabeçalho */
+.header {
+    background-color: #1a1a1a;
+    padding: 10px 0; /* Reduzi o padding para diminuir o fundo */
+}
+
+.header__logo img {
+    max-width: 100px;
+}
+
+/* Estilos do menu */
+.header__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header__menu ul li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.header__menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+    display: block;
+}
+
+.header__menu ul li a:hover {
+    color: #ffdf00;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Dropdown */
+.header__menu ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.header__menu ul li.active .dropdown,
+.header__menu ul li.open .dropdown {
+    display: block;
+}
+
+.header__menu ul li .dropdown li {
+    margin: 0;
+}
+
+.header__menu ul li .dropdown li a {
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.header__menu ul li .dropdown li a:hover {
+    background-color: #444;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .header__menu {
+        justify-content: flex-start;
+    }
+
+    .header__menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header__menu ul li {
+        margin: 5px 0;
+    }
+
+    .header__menu ul li .dropdown {
+        position: relative;
+        top: auto;
+        left: auto;
+        box-shadow: none;
+    }
+}
+
+.header__logo {
+    margin-left: 0; /* Remove qualquer margem à esquerda */
+    padding-left: 0; /* Remove qualquer padding à esquerda */
+}
+
+@media (min-width: 992px) {
+    .header__logo {
+        position: relative;
+        left: -400px; /* Mova o logo para a esquerda, ajuste conforme necessário */
+    }
+}
+
+@media (max-width: 991px) {
+    .header__logo {
+        left: 0; /* Reseta o deslocamento à esquerda em telas menores */
+    }
+
+    .header__nav {
+        margin-top: 10px; /* Adiciona espaço entre o logo e o menu, se necessário */
+    }
+}
+
+
+.hero__items {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* Altura padrão para todos os banners */
+    display: flex;
+    align-items: center;
+    color: rgb(152, 228, 252); /* Cor padrão do texto */
+}
+
+.hero__text {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o texto */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hero__text .label {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #a9afff; /* Cor dourada para destaque */
+}
+
+.hero__text h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #d6f9fa; /* Cor padrão do título */
+}
+
+.hero__text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #d6f9fa; /* Cor do texto do parágrafo */
+}
+
+
+
+.live__product .section-title h4 {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #008cff;
+    margin-bottom: 30px;
+    text-align: center; /* Centraliza o título */
+}
+
+.product__item {
+    margin-bottom: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1d1d1db6;
+    box-shadow: 0 4px 8px rgba(245, 245, 245, 0.856); /* Sombra sutil */
+}
+
+.product__item:hover {
+    transform: translateY(-10px); /* Eleva o card no hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+}
+
+.product__item__pic {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid #ff0000cc; /* Borda inferior com cor de destaque */
+}
+
+.product__item__text {
+    padding: 15px;
+    text-align: center;
+}
+
+.product__item__text h5 a {
+    font-size: 18px;
+    color: #ff0000; /* Cor de destaque */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.product__item__text h5 a:hover {
+    color: #0049e5; /* Cor de destaque no hover */
+}
+
+/* Flexbox para garantir alinhamento */
+.row.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Correções de estilo */
+.col-lg-8, .col-lg-4 {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Garantir que as colunas ocupem o espaço certo */
+.col-lg-8 {
+    flex: 0 0 66.6667%;
+    max-width: 66.6667%;
+}
+
+.col-lg-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+}
+
+.product__sidebar__view__item {
+    margin-bottom: 15px;
+}
+
+/* Ajuste para garantir que a sidebar não flutue para baixo */
+.product__sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contêiner dos Anúncios e Créditos */
+.sidebar-container {
+    position: fixed; /* Fixa o contêiner na tela */
+    top: 10px; /* Espaçamento do topo */
+    right: 10px; /* Espaçamento da direita */
+    width: 300px; /* Largura do contêiner */
+    display: flex; /* Flexbox para layout vertical */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    gap: 20px; /* Espaçamento entre os itens */
+    z-index: 9999; /* Garante que o contêiner esteja acima de outros elementos */
+}
+
+/* Itens do Sidebar */
+.sidebar-item {
+    position: relative; /* Necessário para o posicionamento absoluto do conteúdo interno */
+    width: 100%; /* Largura do item */
+    height: 80px; /* Altura do item */
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px; /* Borda arredondada para um visual mais moderno */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa as bordas do item */
+    display: flex; /* Flexbox para centralizar o texto */
+    align-items: center; /* Alinha o texto verticalmente */
+    justify-content: center; /* Alinha o texto horizontalmente */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente para melhorar a visibilidade do texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave ao redor do item */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave para efeitos de hover */
+}
+
+.sidebar-item:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o item ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Aumenta a sombra no hover */
+}
+
+.sidebar-item h5 {
+    margin: 0; /* Remove a margem padrão dos títulos */
+    text-align: center; /* Alinha o texto ao centro */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Destaca o texto */
+}
+
+/* Contêiner dos Anúncios e Créditos */
+.sidebar-container {
+    position: fixed; /* Fixa o contêiner na tela */
+    top: 10px; /* Espaçamento do topo */
+    right: 10px; /* Espaçamento da direita */
+    width: 300px; /* Largura do contêiner */
+    display: flex; /* Flexbox para layout vertical */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    gap: 20px; /* Espaçamento entre os itens */
+    z-index: 9999; /* Garante que o contêiner esteja acima de outros elementos */
+}
+
+/* Itens do Sidebar */
+.sidebar-item {
+    position: relative; /* Necessário para o posicionamento absoluto do conteúdo interno */
+    width: 100%; /* Largura do item */
+    height: 120px; /* Altura do item */
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px; /* Borda arredondada para um visual mais moderno */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa as bordas do item */
+    display: flex; /* Flexbox para centralizar o texto */
+    align-items: center; /* Alinha o texto verticalmente */
+    justify-content: center; /* Alinha o texto horizontalmente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para melhorar a visibilidade do texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave ao redor do item */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave para efeitos de hover */
+}
+
+.sidebar-item:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o item ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Aumenta a sombra no hover */
+}
+
+.sidebar-item h5 {
+    margin: 0; /* Remove a margem padrão dos títulos */
+    text-align: center; /* Alinha o texto ao centro */
+    color: #ff0000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Destaca o texto */
+}
+
+/* Créditos */
+.sidebar-credits {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro para os créditos */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 12px; /* Borda arredondada para um visual mais moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave ao redor do contêiner */
+}
+
+.sidebar-credits .section-title {
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    text-align: center; /* Alinha o título ao centro */
+}
+
+.sidebar-credits h5 {
+    margin: 5px 0; /* Espaço entre itens de crédito */
+    font-size: 14px; /* Tamanho da fonte */
+    color: #ff0000; /* Cor do texto */
+}
+
+.sidebar-credits a {
+    color: #ff0000; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Destaca o texto dos links */
+}
+
+.sidebar-credits a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+

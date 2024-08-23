@@ -61,11 +61,11 @@
 	<!-- Header Section Begin -->
 	<header class="header">
 		<div class="container">
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col-lg-2">
 					<div class="header__logo">
 						<a href="./index.html">
-							<img src="" alt="" />
+							<img src="img/label/Mirai.png" alt="Logo" />
 						</a>
 					</div>
 				</div>
@@ -75,7 +75,7 @@
 							<ul>
 								<li class="active"><a href="./index.html">Home</a></li>
 								<li>
-									<a href="">Categorias<span class="arrow_carrot-down"></span></a>
+									<a href="#">Categorias <span class="arrow_carrot-down"></span></a>
 									<ul class="dropdown">
 										<li><a href="./jogos/lista.html">Visual Novels</a></li>
 										<li><a href="./outros.html">Outras Traduções</a></li>
@@ -91,78 +91,95 @@
 			<div id="mobile-menu-wrap"></div>
 		</div>
 	</header>
+	
 	<!-- Header End -->
 	<!-- Hero Section Begin -->
-	<section class="hero">
-		<div class="container">
-			<div class="hero__slider owl-carousel">
-				<div class="hero__items set-bg" data-setbg="img/label/label1.png">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero__text">
-								<div class="label">Seja-bem vindo(a)!</div>
-								<h2 style="color:rgba(39, 102, 238, 0.986);">Conheça o Mirai Translations</h2>
-								<p>
-									Uma comunidade com o objetivo de lhe trazer as mais diversas traduções.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hero__items set-bg" data-setbg="img/label/label2.png">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero__text">
-								<div class="label">O que trazemos?</div>
-								<h2 style="color: rgb(11, 255, 51);">Nós temos uma função, essa é...</h2>
-								<p>
-									Entregar-te as traduções de visual novel e diversos jogos para a comunidade brasileira.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hero__items set-bg" data-setbg="img/label/label3.jpg">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero__text">
-								<div class="label">Explore!</div>
-								<h2 style="color: rgb(17, 225, 240);">Sinta-se à vontade</h2>
-								<p>
-									As traduções que você encontra aqui estão prontinhos, especialmente para
-									você.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hero__items set-bg" data-setbg="img/label/label4.jpg">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero__text">
-								<div class="label">Novidades!</div>
-								<h2 style="color: blue;">Nova tradução!</h2>
-								<p style="color: rgb(157, 5, 228)">
-									
-								   Tudo é um spoiler
-                                   Um RPG clássico cheio de risadas e emoção.
 
-                                   Ocorrem incidentes em que cidadãos desaparecem um após o outro.
-                                   O Rei Mastermynd ordena que o herói derrote o cérebro por trás deste incidente.
-                                   A companheira do herói, a Maga Masha Betrayin, fa la que nunca vai trair ele.
-
-                                   Para onde foi o pai do herói depois de partir?
-                                   O Rei Demônio Herr Osdad aguarda os heróis.
-                                   Qual é a verdadeira identidade do Rei Demônio revelada no final da aventura?
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const dropdownToggles = document.querySelectorAll('.header__menu > ul > li > a');
 	
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			dropdownToggles.forEach(function(toggle) {
+				toggle.addEventListener('click', function(event) {
+					event.preventDefault();
+	
+					const parentLi = this.parentElement;
+					parentLi.classList.toggle('open');
+	
+					// Fecha outros dropdowns abertos
+					document.querySelectorAll('.header__menu > ul > li').forEach(function(li) {
+						if (li !== parentLi) {
+							li.classList.remove('open');
+						}
+					});
+				});
+			});
+		});
+	</script>	
+	<section class="hero">
+    <div class="container">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__items set-bg" data-setbg="img/label/label1.png">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="hero__text">
+                            <div class="label">Seja-bem vindo(a)!</div>
+                            <h2>Conheça o Mirai Translations</h2>
+                            <p>
+                                Uma comunidade com o objetivo de lhe trazer as mais diversas traduções.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="img/label/label2.png">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="hero__text">
+                            <div class="label">O que trazemos?</div>
+                            <h2>Nós temos uma função, essa é...</h2>
+                            <p>
+                                Entregar-te as traduções de visual novel e diversos jogos para a comunidade brasileira.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="img/label/label3.jpg">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="hero__text">
+                            <div class="label">Explore!</div>
+                            <h2>Sinta-se à vontade</h2>
+                            <p>
+                                As traduções que você encontra aqui estão prontinhas, especialmente para você.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="img/label/label4.jpg">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="hero__text">
+                            <div class="label">Novidades!</div>
+                            <h2>Nova tradução!</h2>
+                            <p>
+                                Tudo é um spoiler. Um RPG clássico cheio de risadas e emoção.
+                                Ocorrem incidentes em que cidadãos desaparecem um após o outro.
+                                O Rei Mastermynd ordena que o herói derrote o cérebro por trás deste incidente.
+                                A companheira do herói, a Maga Masha Betrayin, fala que nunca vai trair ele.
+                                Para onde foi o pai do herói depois de partir? O Rei Demônio Herr Osdad aguarda os heróis.
+                                Qual é a verdadeira identidade do Rei Demônio revelada no final da aventura?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 	<!-- Hero Section End -->
 
 	<!-- Product Section Begin -->
@@ -335,7 +352,7 @@
 						<div class="row">
 							<div class="col-lg-4 col-md-6 col-sm-6">
 								<div class="product__item">
-									<div class="product__item__pic set-bg" data-setbg="./lista/img/baixados.png">
+									<div class="product__item__pic set-bg" data-setbg="./lista/img/PocketMirror.jpg">
 									</div>
 									<div class="product__item__text">
 										<!--
@@ -346,7 +363,7 @@
                                 <li>Felicidade</li>
                               </ul>
                               -->
-										<h5><a href="#">???</a></h5>
+										<h5><a href="#">Pocket Mirror</a></h5>
 									</div>
 								</div>
 							</div>
@@ -479,146 +496,83 @@
 						<div class="row">
 							<div class="col-lg-8 col-md-8 col-sm-8">
 								<div class="section-title">
-									<h4>Apoiadores</h4>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-4 col-md-6 col-sm-6">
-								<div class="product__item">
-									<div class="product__item__pic set-bg" data-setbg="img/apoiadores/baixados.png">
-									</div>
-									<div class="product__item__text">
-										<h5>
-											<a href="" target="_blank">???</a>
-										</h5>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-sm-6">
-								<div class="product__item">
-									<div class="product__item__pic set-bg" data-setbg="img/apoiadores/apoiadores-2.png">
-									</div>
-									<div class="product__item__text">
-										<h5>
-											<a href="https://vnx.uvnworks.com/" target="_blank">VNX+</a>
-										</h5>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-sm-6">
-								<div class="product__item">
-									<div class="product__item__pic set-bg"
-										data-setbg="lista/img/baixados.png"></div>
-									<div class="product__item__text">
-										<h5>
-											<a href=""
-												target="_blank">?</a>
-										</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="live__product">
-						<div class="row">
-							<div class="col-lg-8 col-md-8 col-sm-8">
-								<div class="section-title">
 									<h4>Youtubers e Parceiros</h4>
 								</div>
 							</div>
 						</div>
 						<div class="row">
+							<!-- Primeiro parceiro -->
 							<div class="col-lg-4 col-md-6 col-sm-6">
 								<div class="product__item">
 									<div class="product__item__pic set-bg" data-setbg="img/youtubers/yt-1.png"></div>
 									<div class="product__item__text">
-										<h5>
-											<a href="https://www.youtube.com/channel/UCsYV_MZDIlvCcTnLfVh3lfw"
-												target="_blank">Kajuzin - O DokiTuber</a>
-										</h5>
+										<h5><a href="https://www.youtube.com/channel/UCsYV_MZDIlvCcTnLfVh3lfw" target="_blank">Kajuzin - O DokiTuber</a></h5>
 									</div>
 								</div>
 							</div>
+						
+							<!-- Segundo parceiro -->
+							<div class="col-lg-4 col-md-6 col-sm-6">
+								<div class="product__item">
+									<div class="product__item__pic set-bg" data-setbg="img/apoiadores/apoiadores-2.png"></div>
+									<div class="product__item__text">
+										<h5><a href="https://vnx.uvnworks.com/" target="_blank">VNX+</a></h5>
+									</div>
+								</div>
+							</div>
+						
+							<!-- Terceiro parceiro -->
 							<div class="col-lg-4 col-md-6 col-sm-6">
 								<div class="product__item">
 									<div class="product__item__pic set-bg" data-setbg="img/youtubers/rance.jpg"></div>
 									<div class="product__item__text">
-										<h5>
-											<a href="https://youtube.com/c/GuertenaPlayer" target="_blank">Rance
-												Guertena</a>
-										</h5>
+										<h5><a href="https://youtube.com/c/GuertenaPlayer" target="_blank">Rance Guertena</a></h5>
 									</div>
 								</div>
 							</div>
+						
+							<!-- Novo parceiro -->
 							<div class="col-lg-4 col-md-6 col-sm-6">
 								<div class="product__item">
 									<div class="product__item__pic set-bg" data-setbg="img/youtubers/chloe.png"></div>
 									<div class="product__item__text">
-										<h5>
-											<a href="https://discord.gg/CHxS4CuQNz"
-												target="_blank">
-												Dispair!Porting</a>
-										</h5>
+										<h5><a href="https://discord.gg/CHxS4CuQNz" target="_blank">Dispair!Porting</a></h5>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-8">
-					<div class="product__sidebar">
-						<div class="product__sidebar__view">
-							<div class="section-title">
-								<h5>Anúncios</h5>
-							</div>
-							<div class="product__sidebar__view__item set-bg mix day"
-								data-setbg="img/sidebar/discord.jpg">
-								<h5>
-									<a href="https://discord.gg/mirai-translations-603325287832354855" target="_blank">Confira nosso Discord</a>
-								</h5>
-							</div>
-							<div class="filter__gallery">
-								<div class="product__sidebar__view__item set-bg mix day years"
-									data-setbg="img/apoiadores/twitter.jpg">
-									<h5>
-										<a href="https://x.com/MiraiTLs" target="_blank">Confira nosso
-											Twitter</a>
-									</h5>
-								</div>
-							</div>
-							<div class="filter__gallery">
-								<div class="product__sidebar__view__item set-bg mix day years"
-									data-setbg="img/sidebar/Patreon.jpg">
-									<h5>
-										<a href="https://www.patreon.com/MiraiTranslations" target="_blank">Confira nosso
-											Patreon</a>
-									</h5>
-								</div>
-							</div>
-						</div>
-						<div class="product__sidebar__comment">
-							<div class="section-title">
-								<h5>Créditos</h5>
-							</div>
-							<div class="product__sidebar__comment__item">
-								<div class="product__sidebar__comment__item__text">
-									<h5><a href="#">Criador do site: Drack</a></h5>
-								</div>
-							</div>
-							<div class="product__sidebar__comment__item">
-								<div class="product__sidebar__comment__item__text">
-									<h5>
-										<a href="#">Ajudante: Sakaki Leonard e Miki </a>
-									</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+						
+					
+					
+<div class="sidebar-container">
+    <!-- Anúncios -->
+    <div class="sidebar-item set-bg" data-setbg="img/sidebar/discord.jpg">
+        <h5><a href="https://discord.gg/mirai-translations-603325287832354855" target="_blank">Confira nosso Discord</a></h5>
+    </div>
+    <div class="sidebar-item set-bg" data-setbg="img/apoiadores/twitter.jpg">
+        <h5><a href="https://x.com/MiraiTLs" target="_blank">Confira nosso Twitter</a></h5>
+    </div>
+    <div class="sidebar-item set-bg" data-setbg="img/sidebar/Patreon.jpg">
+        <h5><a href="https://www.patreon.com/MiraiTranslations" target="_blank">Confira nosso Patreon</a></h5>
+    </div>
+
+    <!-- Créditos -->
+    <div class="sidebar-credits">
+        <div class="section-title">
+            <h5>Créditos</h5>
+        </div>
+        <div class="credit-item">
+            <h5><a href="#">Criador do site: Drack</a></h5>
+        </div>
+        <div class="credit-item">
+            <h5><a href="#">Ajudante: Sakaki Leonard e Miki</a></h5>
+        </div>
+    </div>
+</div>
+
 	</section>
+
+					
 	<!-- Product Section End -->
 	<!-- Footer Section Begin -->
 	<footer class="footer">
