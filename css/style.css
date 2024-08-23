@@ -2415,7 +2415,7 @@ ol {
 @media (min-width: 992px) {
     .header__logo {
         position: relative;
-        left: -400px; /* Mova o logo para a esquerda, ajuste conforme necessário */
+        left: -300px; /* Mova o logo para a esquerda, ajuste conforme necessário */
     }
 }
 
