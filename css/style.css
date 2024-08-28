@@ -2300,7 +2300,7 @@ ol {
 	}
 
 	.anime__review__item__text h6 span {
-		font-size: 12px;
+		font-size: 22px;
 	}
 
 	.anime__review__item__text {
@@ -2661,3 +2661,25 @@ ol {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
+.anime__details__pic {
+    border-radius: 15px; /* Bordas arredondadas */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra ao redor da imagem */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+}
+
+.anime__details__pic img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.anime__details__pic:hover {
+    transform: scale(1.05); /* Aumenta levemente a imagem ao passar o mouse */
+    box-shadow: 0 6px 20px rgba(252, 252, 252, 0.8); /* Aumenta a sombra ao passar o mouse */
+}
+
+.anime__details__pic img:hover {
+    transform: scale(1.1); /* Zoom na imagem ao passar o mouse */
+}
