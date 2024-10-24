@@ -968,7 +968,7 @@ ol {
 .anime__details__btn .watch-btn span {
 	font-size: 13px;
 	color: #ffffff;
-	background: #e53637;
+	background: #0a0a0a;
 	display: inline-block;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -981,7 +981,7 @@ ol {
 .anime__details__btn .watch-btn i {
 	font-size: 20px;
 	display: inline-block;
-	background: #e53637;
+	background: #030303;
 	padding: 11px 5px 16px 8px;
 	color: #ffffff;
 	border-radius: 0 4px 4px 0;
@@ -2683,3 +2683,38 @@ ol {
 .anime__details__pic img:hover {
     transform: scale(1.1); /* Zoom na imagem ao passar o mouse */
 }
+
+.anime__details__btn {
+    text-align: center; /* Centraliza o botão */
+    margin: 20px 0; /* Espaçamento em cima e embaixo */
+}
+
+.watch-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000000; /* Cor de fundo preta */
+    color: #ffffff;
+    border-radius: 10px; /* Bordas arredondadas */
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6); /* Sombra com brilho suave debaixo do botão */
+}
+
+.watch-btn:hover {
+    background-color: #333333; /* Tom mais escuro no hover */
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.8); /* Brilho mais intenso no hover */
+}
+
+.watch-btn:active {
+    transform: translateY(0); /* Remove elevação ao clicar */
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.4); /* Brilho reduzido ao clicar */
+}
+
+.watch-btn i {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
