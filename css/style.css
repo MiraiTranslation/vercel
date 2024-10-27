@@ -2725,10 +2725,73 @@ ol {
             background-color: #121212;
             color: #ffffff;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+        }
+
+        /* Estilo do menu de navegação */
+        .navbar {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        /* Ajuste do contêiner principal */
+        .main-container {
             display: flex;
             justify-content: center;
+            padding: 20px;
         }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Contêiner para anúncios e barra de progresso */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+            margin-right: 20px;
+        }
+
+        /* Botões dos anúncios */
+        .ad-button {
+            width: 220px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .ad-discord { background-color: #5865f2; }
+        .ad-twitter { background-color: #1DA1F2; }
+        .ad-patreon { background-color: #FF424D; }
+
+        /* Hover Effects */
+        .ad-discord:hover { background-color: #4752c4; }
+        .ad-twitter:hover { background-color: #198dcb; }
+        .ad-patreon:hover { background-color: #e23a44; }
 
         .progress-section {
             background-color: #1e1e2f;
@@ -2799,34 +2862,3 @@ ol {
         .game-progress h3, .progress-section h2 {
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.3);
         }
-
-        /* Contêiner para anúncios e barra de progresso */
-        .sidebar {
-            position: fixed;
-            top: 60%; /* Ajuste conforme necessário */
-            right: 10px; /* Fixa à direita da tela */
-            display: flex;
-            flex-direction: column;
-            gap: 20px; /* Espaçamento entre os itens */
-            z-index: 1000; /* Garante que fique acima dos outros elementos */
-        }
-
-        /* Botões dos anúncios */
-        .ad-button {
-            width: 220px;
-            height: 80px;
-            border-radius: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            padding: 10px;
-        }
-
-        .ad-discord { background-color: #5865f2; }
-        .ad-twitter { background-color: #1DA1F2; }
-        .ad-patreon { background-color: #FF424D; }
