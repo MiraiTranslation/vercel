@@ -5,7 +5,7 @@
     <img src="https://doki-doki-translate-company.webnode.com/_files/200000000-b8bc1b8bc3/200/logo_DDTC_4K.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Site Doki Doki Translate</h3>
+  <h3 align="center">Mirai Translations</h3>
 
   <p align="center">
     O reposítorio oficial da comunidade de traduções de mods de Doki Doki

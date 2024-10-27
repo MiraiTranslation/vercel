@@ -2718,4 +2718,146 @@ ol {
     font-size: 1.2em;
 }
 
+<title>Progresso das Traduções</title>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
 
+        /* Estilo do menu de navegação */
+        .navbar {
+            background-color: #333333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        /* Ajuste do contêiner principal */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Contêiner para anúncios e barra de progresso */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+            margin-right: 20px;
+        }
+
+        /* Botões dos anúncios */
+        .ad-button {
+            width: 220px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .ad-discord { background-color: #5865f2; }
+        .ad-twitter { background-color: #1DA1F2; }
+        .ad-patreon { background-color: #FF424D; }
+
+        /* Hover Effects */
+        .ad-discord:hover { background-color: #940317; }
+        .ad-twitter:hover { background-color: #4f01b6; }
+        .ad-patreon:hover { background-color: #ffda0b; }
+
+        .progress-section {
+            background-color: #1e1e2f;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            box-shadow: 0px 4px 15px rgb(255, 255, 255);
+        }
+
+        .progress-section h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .game-progress {
+            margin-bottom: 25px;
+        }
+
+        .game-progress h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .progress-bar-container {
+            background-color: #292942;
+            border-radius: 25px;
+            overflow: hidden;
+            height: 16px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0a0a, #00b3ff);
+            border-radius: 25px;
+            transition: width 0.6s ease;
+            box-shadow: 0 4px 10px rgba(243, 243, 243, 0.4);
+        }
+
+        .progress-bar-container::before {
+            content: attr(data-progress) "%";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: #fff;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .game-progress p {
+            text-align: right;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #bbbbbb;
+        }
+
+        /* Adiciona um efeito de brilho ao texto */
+        .game-progress h3, .progress-section h2 {
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.3);
+        }
