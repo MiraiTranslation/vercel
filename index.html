@@ -85,7 +85,8 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-lg-8">
+					
+					<!-- Navegação -->
 					<div class="header__nav">
 						<nav class="header__menu mobile-menu">
 							<ul>
@@ -99,12 +100,8 @@
 									</ul>
 								</li>
 								<li><a href="https://discord.com/invite/mirai-translations-603325287832354855">Discord</a></li>
+								<li><a href="./Equipe.html">Equipe</a></li>
 							</ul>
-							<li>
-								<a href="./Equipe.html"
-									>Equipe</a
-								>
-							</li>
 						</nav>
 					</div>
 				</div>
@@ -116,27 +113,7 @@
 	<!-- Header End -->
 	<!-- Hero Section Begin -->
 
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			const dropdownToggles = document.querySelectorAll('.header__menu > ul > li > a');
-	
-			dropdownToggles.forEach(function(toggle) {
-				toggle.addEventListener('click', function(event) {
-					event.preventDefault();
-	
-					const parentLi = this.parentElement;
-					parentLi.classList.toggle('open');
-	
-					// Fecha outros dropdowns abertos
-					document.querySelectorAll('.header__menu > ul > li').forEach(function(li) {
-						if (li !== parentLi) {
-							li.classList.remove('open');
-						}
-					});
-				});
-			});
-		});
-	</script>
+
 	
 	
 	<section class="hero">
@@ -581,48 +558,59 @@
 								</div>
 							</div>
 							
-							<section class="progress-section">
-								<h2>Progresso das Traduções</h2>
-						
-								<!-- Progresso dos jogos -->
-								<div class="game-progress">
-									<h3>Pocket Mirror</h3>
-									<div class="progress-bar-container" data-progress="75">
-										<div class="progress-bar" style="width: 75%;"></div>
-									</div>
-									<p>75% Completo</p>
-								</div>
-						
-								<div class="game-progress">
-									<h3>Saikoro Psycho</h3>
-									<div class="progress-bar-container" data-progress="10">
-										<div class="progress-bar" style="width: 10%;"></div>
-									</div>
-									<p>10% Completo</p>
-								</div>
-						
-								<div class="game-progress">
-									<h3>The Cradle of Ruin</h3>
-									<div class="progress-bar-container" data-progress="0">
-										<div class="progress-bar" style="width: 0%;"></div>
-									</div>
-									<p>0% Completo</p>
-								</div>
-						
-								<!-- Botões de anúncios -->
-								<div class="sidebar">
-									<a href="https://discord.com/invite/mirai-translations-603325287832354855" target="_blank" class="ad-button ad-discord">Confira nosso Discord</a>
-									<a href="https://x.com/MiraiTLs" target="_blank" class="ad-button ad-twitter">Confira nosso Twitter</a>
-									<a href="https://www.patreon.com/c/miraitranslations/membership" target="_blank" class="ad-button ad-patreon">Confira nosso Patreon</a>
-								</div>
-							</section>
-						</div>
+							 <section class="progress-section">
+
+        <h2>Progresso das Traduções</h2>
+
+        <!-- Progresso dos jogos -->
+        <div class="game-progress">
+            <h3>Pocket Mirror</h3>
+            <div class="progress-bar-container" data-progress="75">
+                <div class="progress-bar" style="width: 75%;"></div>
+            </div>
+            <p>75% Completo</p>
+        </div>
+
+        <div class="game-progress">
+            <h3>Saikoro Psycho</h3>
+            <div class="progress-bar-container" data-progress="10">
+                <div class="progress-bar" style="width: 10%;"></div>
+            </div>
+            <p>10% Completo</p>
+        </div>
+
+        <div class="game-progress">
+            <h3>The Cradle of Ruin</h3>
+            <div class="progress-bar-container" data-progress="0">
+                <div class="progress-bar" style="width: 0%;"></div>
+            </div>
+            <p>0% Completo</p>
+        </div>
+
+        <!-- Botões de anúncios (Sidebar) -->
+        <div class="sidebar">
+            <a href="https://discord.com/invite/mirai-translations-603325287832354855" target="_blank" class="ad-button ad-discord">Confira nosso Discord</a>
+            <a href="https://x.com/MiraiTLs" target="_blank" class="ad-button ad-twitter">Confira nosso Twitter</a>
+            <a href="https://www.patreon.com/c/miraitranslations/membership" target="_blank" class="ad-button ad-patreon">Confira nosso Patreon</a>
+        </div>
+    </section>
+
+    
 						
 
 	</section>
-	
 
-					
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const menuToggle = document.getElementById('menu-toggle');
+			const navMenu = document.querySelector('.header__menu');
+	
+			// Toggle para abrir/fechar o menu no celular
+			menuToggle.addEventListener('click', function () {
+				navMenu.classList.toggle('active');
+			});
+		});
+	</script>
 	<!-- Product Section End -->
 	<!-- Footer Section Begin -->
 	<footer class="footer">

@@ -2309,127 +2309,6 @@ ol {
 }
 
 
-/* Estilos gerais do cabeçalho */
-.header {
-    background-color: #1a1a1a;
-    padding: 10px 0; /* Reduzi o padding para diminuir o fundo */
-}
-
-.header__logo img {
-    max-width: 100px;
-}
-
-/* Estilos do menu */
-.header__menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.header__menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.header__menu ul li {
-    margin: 0 10px;
-    position: relative;
-}
-
-.header__menu ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 15px;
-    transition: color 0.3s, background-color 0.3s;
-    display: block;
-}
-
-.header__menu ul li a:hover {
-    color: #ffdf00;
-    background-color: #333;
-    border-radius: 5px;
-}
-
-/* Dropdown */
-.header__menu ul li .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #333;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    z-index: 1000;
-}
-
-.header__menu ul li.active .dropdown,
-.header__menu ul li.open .dropdown {
-    display: block;
-}
-
-.header__menu ul li .dropdown li {
-    margin: 0;
-}
-
-.header__menu ul li .dropdown li a {
-    padding: 10px 20px;
-    color: #fff;
-}
-
-.header__menu ul li .dropdown li a:hover {
-    background-color: #444;
-}
-
-/* Responsividade */
-@media (max-width: 991px) {
-    .header__menu {
-        justify-content: flex-start;
-    }
-
-    .header__menu ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .header__menu ul li {
-        margin: 5px 0;
-    }
-
-    .header__menu ul li .dropdown {
-        position: relative;
-        top: auto;
-        left: auto;
-        box-shadow: none;
-    }
-}
-
-.header__logo {
-    margin-left: 0; /* Remove qualquer margem à esquerda */
-    padding-left: 0; /* Remove qualquer padding à esquerda */
-}
-
-@media (min-width: 992px) {
-    .header__logo {
-        position: relative;
-        left: -300px; /* Mova o logo para a esquerda, ajuste conforme necessário */
-    }
-}
-
-@media (max-width: 991px) {
-    .header__logo {
-        left: 0; /* Reseta o deslocamento à esquerda em telas menores */
-    }
-
-    .header__nav {
-        margin-top: 10px; /* Adiciona espaço entre o logo e o menu, se necessário */
-    }
-}
-
-
 .hero__items {
     position: relative;
     background-size: cover;
@@ -2634,10 +2513,38 @@ ol {
 
 /* Créditos */
 .sidebar-credits {
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro para os créditos */
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 0, 0.6)); /* Gradiente suave */
     padding: 15px; /* Espaçamento interno */
     border-radius: 12px; /* Borda arredondada para um visual mais moderno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave ao redor do contêiner */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra mais suave e pronunciada ao redor do contêiner */
+    position: relative; /* Para permitir o posicionamento absoluto dos elementos de iluminação */
+    overflow: hidden; /* Para evitar que os efeitos de iluminação saiam do contêiner */
+}
+
+/* Efeito de iluminação */
+.sidebar-credits::before {
+    content: ""; /* Cria um elemento vazio */
+    position: absolute; /* Permite o posicionamento relativo ao contêiner */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(255, 0, 0, 0) 70%); /* Efeito de brilho radial */
+    pointer-events: none; /* Ignora eventos do mouse */
+    animation: pulse 3s infinite; /* Animação de pulsação */
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
 
 .sidebar-credits .section-title {
@@ -2655,11 +2562,14 @@ ol {
     color: #ff0000; /* Cor dos links */
     text-decoration: none; /* Remove o sublinhado dos links */
     font-weight: bold; /* Destaca o texto dos links */
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
 }
 
 .sidebar-credits a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    color: #fff; /* Muda a cor do link ao passar o mouse */
 }
+
 
 .anime__details__pic {
     border-radius: 15px; /* Bordas arredondadas */
@@ -2861,3 +2771,127 @@ ol {
         .game-progress h3, .progress-section h2 {
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.3);
         }
+
+		 /* Estilos específicos para dispositivos móveis */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none; /* Esconder barra de progresso no celular */
+
+				
+
+		}
+
+
+		@media only screen and (max-width: 768px) {
+			.sidebar-container {
+				display: none;
+			}
+		}
+
+		.header {
+			background-color: #050505;
+			padding: 15px 0;
+		}
+	
+		.header__logo img {
+			max-width: 100%;
+			height: auto;
+		}
+	
+		.header__menu {
+			display: flex;
+			justify-content: flex-end;
+		}
+	
+		.header__menu ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+		}
+	
+		.header__menu li {
+			position: relative;
+			margin-left: 20px;
+		}
+	
+		.header__menu a {
+			text-decoration: none;
+			color: #333;
+			font-weight: bold;
+		}
+	
+		.header__menu .dropdown {
+			display: none;
+			position: absolute;
+			background-color: #043779;
+			box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+			padding: 10px 0;
+			list-style: none;
+			top: 100%;
+			left: 0;
+			min-width: 180px;
+		}
+	
+		.header__menu li:hover .dropdown {
+			display: block;
+		}
+	
+		.header__menu .dropdown li {
+			margin: 0;
+		}
+	
+		.header__menu .dropdown a {
+			padding: 10px 20px;
+			display: block;
+			color: #333;
+			white-space: nowrap;
+		}
+	
+		/* Estilos para o menu responsivo */
+		.mobile-menu-toggle {
+			display: none;
+		}
+	
+		@media only screen and (max-width: 768px) {
+			/* Esconde o menu normal e mostra o botão de hambúrguer no celular */
+			.header__nav {
+				display: none;
+			}
+	
+			.mobile-menu-toggle {
+				display: block;
+			}
+	
+			/* Menu de navegação expandido para o celular */
+			.header__menu {
+				flex-direction: column;
+				position: absolute;
+				top: 60px;
+				left: 0;
+				background-color: #050505;
+				width: 100%;
+				box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+				display: none; /* Inicialmente escondido no celular */
+				z-index: 999;
+			}
+	
+			.header__menu.active {
+				display: block;
+			}
+	
+			.header__menu ul {
+				flex-direction: column;
+			}
+	
+			.header__menu li {
+				margin: 0;
+			}
+	
+			.header__menu .dropdown {
+				position: relative;
+				box-shadow: none;
+			}
+		}
+
+		
