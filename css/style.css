@@ -1847,7 +1847,7 @@ ol {
 	color: #ffffff;
 	height: 50px;
 	width: 50px;
-	background: #e53637;
+	background: #2974ff;
 	line-height: 50px;
 	text-align: center;
 	border-radius: 50%;
@@ -2516,7 +2516,7 @@ ol {
     background: linear-gradient(135deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 0, 0.6)); /* Gradiente suave */
     padding: 15px; /* Espaçamento interno */
     border-radius: 12px; /* Borda arredondada para um visual mais moderno */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra mais suave e pronunciada ao redor do contêiner */
+    box-shadow: 0 4px 20px rgba(207, 186, 186, 0.63); /* Sombra mais suave e pronunciada ao redor do contêiner */
     position: relative; /* Para permitir o posicionamento absoluto dos elementos de iluminação */
     overflow: hidden; /* Para evitar que os efeitos de iluminação saiam do contêiner */
 }
@@ -2893,5 +2893,6 @@ ol {
 				box-shadow: none;
 			}
 		}
+
 
 		
