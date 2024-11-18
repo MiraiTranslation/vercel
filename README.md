@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="#">
-    <img src="img/sidebar/Mirai2.jpg" alt="Logo" width="80" height="80">
+    <img src="img/sidebar/Mirai2.jpg" alt="Logo">
   </a>
 
   <h3 align="center">Mirai Translations</h3>
