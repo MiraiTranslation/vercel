@@ -2,22 +2,20 @@
 <br />
 <p align="center">
   <a href="#">
-    <img src="https://doki-doki-translate-company.webnode.com/_files/200000000-b8bc1b8bc3/200/logo_DDTC_4K.png" alt="Logo" width="80" height="80">
+    <img src="https://imgur.com/DDKnBCq" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Mirai Translations</h3>
 
   <p align="center">
-    O reposítorio oficial da comunidade de traduções de mods de Doki Doki
+    O reposítorio oficial da  Mirai Translations
     <br />
-    <a href="#"><strong>Acessar o nosso site »</strong></a>
+    <a href="https://www.miraitranslations.com.br/"><strong>Acessar o nosso site »</strong></a>
     <br />
     <br />
-    <a href="https://discord.gg/3PB24jt">Discord</a>
+    <a href="https://discord.com/invite/mirai-translations-603325287832354855">Discord</a>
     ·
-    <a href="https://github.com/Drack112/site-ddlc/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Drack112/site-ddlc/issuess">Request Feature</a>
+    <a href="https://github.com/MiraiTranslation/vercel/issues">Report Bug</a>
   </p>
 </p>
 
@@ -25,17 +23,9 @@
 
 ## Sobre o projeto
 
-<img src="https://i.imgur.com/SKnz1oI.png">
+<img src="https://imgur.com/oRvS7CL">
 
-O objetivo desse repositório é reformular e refazer passo por passo o antigo site Doki Doki Translate Club
-
-Motivos:
-
-- O antigo site estava mal estruturado
-- Um design que necessitava de ajustes
-- E uma pequeno reajuste e organização na parte dos mods
-
-O projeto ainda está em desenvolvimento, porém alguns dos trabalhos difíceis ja foram feitos e ja podem deixar o mesmo mais fácil.
+O objetivo desse repositório é reformular e refazer passo por passo o antigo site Doki Doki Translate Club/Doki Doki Translate Company e atual Mirai Translations
 
 ### Ferramentas usadas
 
