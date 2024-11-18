@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="#">
-    <img src="https://imgur.com/DDKnBCq" alt="Logo" width="80" height="80">
+    <img src="img/sidebar/Mirai2.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Mirai Translations</h3>
@@ -23,7 +23,7 @@
 
 ## Sobre o projeto
 
-<img src="https://imgur.com/oRvS7CL">
+<img src="img/sidebar/oRvS7CL.png">
 
 O objetivo desse repositório é reformular e refazer passo por passo o antigo site Doki Doki Translate Club/Doki Doki Translate Company e atual Mirai Translations
 
