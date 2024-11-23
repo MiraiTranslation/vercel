@@ -113,36 +113,3 @@
 		return false
 	})
 })(jQuery)
-<!-- Script JSON-LD (Schema.org) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "How to Sing to Open Your Heart - Uma História de Magia e Música",
-  "description": "Acompanhe Myana, a princesa cantora, em sua luta para unir dois mundos divididos através do poder da música.",
-  "url": "https://example.com/how-to-sing",
-  "image": {
-	"@type": "ImageObject",
-	"url": "https://example.com/images/preview-how-to-sing-enhanced.jpg",
-	"width": 1200,
-	"height": 630,
-	"caption": "Myana e Ludovic sob o céu estrelado - uma história de amor e magia."
-  },
-  "publisher": {
-	"@type": "Organization",
-	"name": "Mirai Translations®",
-	"logo": {
-	  "@type": "ImageObject",
-	  "url": "https://example.com/images/logo-mirai-translations.png",
-	  "width": 512,
-	  "height": 512
-	}
-  },
-  "datePublished": "2024-11-18",
-  "keywords": [
-	"visual novel", "fantasia", "romance", "música",
-	"How to Sing to Open Your Heart", "Myana", "Ludovic",
-	"Eroolia", "luccretias", "laarz"
-  ]
-}
-</script>
