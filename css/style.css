@@ -1827,69 +1827,99 @@ ol {
   Footer
 -----------------------*/
 
-.footer {
-	background: #070720;
-	padding-top: 60px;
-	padding-bottom: 40px;
-	position: relative;
+:root {
+    /* Definindo variáveis de cor para facilitar a manutenção */
+    --color-dark: #0f0f0f;
+    --color-primary: #f11e1e;
+    --color-accent: #f00f0f;
+    --color-text-light: #04e2ff;
+    --color-text-accent: #e7e7e7;
+}
+
+footer {
+    background: var(--color-dark);
+    padding: 60px 0 40px; /* Unificando o padding */
+    position: relative;
 }
 
 .page-up {
-	position: absolute;
-	left: 50%;
-	top: -25px;
-	margin-left: -25px;
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%); /* Centraliza melhor o botão */
 }
 
 .page-up a {
-	display: inline-block;
-	font-size: 36px;
-	color: #ffffff;
-	height: 50px;
-	width: 50px;
-	background: #2974ff;
-	line-height: 50px;
-	text-align: center;
-	border-radius: 50%;
+    display: inline-block;
+    font-size: 36px;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    background: var(--color-primary);
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background 0.3s ease; /* Adicionando transição */
+}
+
+.page-up a:hover {
+    background: var(--color-accent); /* Efeito de hover */
 }
 
 .page-up a span {
-	position: relative;
-	top: 2px;
-	left: -1px;
+    position: relative;
+    top: 2px;
+    left: -1px;
 }
 
 .footer__nav {
-	text-align: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer__nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .footer__nav ul li {
-	list-style: none;
-	display: inline-block;
-	position: relative;
-	margin-right: 40px;
+    display: inline-block;
+    margin-right: 40px;
 }
 
 .footer__nav ul li:last-child {
-	margin-right: 0;
+    margin-right: 0;
 }
 
 .footer__nav ul li a {
-	font-size: 15px;
-	color: #b7b7b7;
-	display: block;
-	font-weight: 700;
+    font-size: 15px;
+    color: var(--color-text-light);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+.footer__nav ul li a:hover {
+    color: var(--color-text-accent); /* Efeito de hover */
 }
 
 .footer__copyright__text {
-	color: #b7b7b7;
-	margin-bottom: 0;
-	text-align: right;
+    color: var(--color-text-light);
+    margin-top: 20px;
+    text-align: right;
+    font-size: 14px;
 }
 
 .footer__copyright__text a {
-	color: #e53637;
+    color: var(--color-text-accent);
+    text-decoration: none;
 }
+
+.footer__copyright__text a:hover {
+    text-decoration: underline; /* Adicionando underline no hover */
+}
+
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
@@ -2225,157 +2255,222 @@ ol {
 /* Small Device = 320px */
 
 @media only screen and (max-width: 479px) {
-	.hero__slider.owl-carousel .owl-nav {
-		display: none;
-	}
+    /* Hero Section */
+    .hero__slider.owl-carousel .owl-nav {
+        display: none;
+    }
 
-	.hero__items {
-		padding: 250px 0 42px 15px;
-	}
+    .hero__items {
+        padding: 250px 0 42px 15px;
+    }
 
-	.hero__text h2 {
-		font-size: 32px;
-	}
+    .hero__text h2 {
+        font-size: 32px;
+    }
 
-	.footer__nav ul li {
-		margin-right: 10px;
-	}
+    /* Footer Navigation */
+    .footer__nav ul li {
+        margin-right: 10px;
+    }
 
-	.anime__details__btn .follow-btn {
-		padding: 14px 26px;
-		margin-right: 11px;
-		margin-bottom: 25px;
-	}
+    /* Anime Details */
+    .anime__details__btn .follow-btn {
+        padding: 14px 26px;
+        margin-right: 11px;
+        margin-bottom: 25px;
+    }
 
-	.anime__details__widget ul li span {
-		width: 85px;
-	}
+    .anime__details__widget ul li span {
+        width: 85px;
+    }
 
-	.anime__video__player .plyr__volume {
-		left: 65px;
-	}
+    /* Video Player */
+    .anime__video__player .plyr__volume {
+        left: 65px;
+    }
 
-	.anime__video__player .plyr__controls .plyr__controls__item.plyr__time {
-		left: 95px;
-	}
+    .anime__video__player .plyr__controls .plyr__controls__item.plyr__time {
+        left: 95px;
+    }
 
-	.anime__video__player .plyr__menu {
-		margin-right: 60px;
-	}
+    .anime__video__player .plyr__menu {
+        margin-right: 60px;
+    }
 
-	.blog__details__title h2 {
-		font-size: 30px;
-		line-height: normal;
-	}
+    /* Blog Details */
+    .blog__details__title h2 {
+        font-size: 30px;
+        line-height: normal;
+    }
 
-	.blog__details__title .blog__details__social a {
-		padding: 16px 25px 14px 20px;
-	}
+    .blog__details__title .blog__details__social a {
+        padding: 16px 25px 14px 20px;
+    }
 
-	.blog__details__comment__item.blog__details__comment__item--reply {
-		padding-left: 0;
-	}
+    .blog__details__comment__item.blog__details__comment__item--reply {
+        padding-left: 0;
+    }
 
-	.blog__details__comment__item__pic {
-		margin-right: 25px;
-	}
+    .blog__details__comment__item__pic {
+        margin-right: 25px;
+    }
 
-	.blog__details__comment__item__text a {
-		margin-right: 6px;
-	}
+    .blog__details__comment__item__text a {
+        margin-right: 6px;
+    }
 
-	.login__social__links ul li a i {
-		left: 20px;
-	}
+    /* Login Section */
+    .login__social__links ul li a i {
+        left: 20px;
+    }
 
-	.login__form .forget_pass {
-		position: relative;
-		left: 0;
-		bottom: 0;
-		margin-top: 25px;
-	}
+    .login__form .forget_pass {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 25px;
+    }
 
-	.header__right a {
-		margin-right: 10px;
-	}
+    .header__right a {
+        margin-right: 10px;
+    }
 
-	.anime__review__item__text h6 span {
-		font-size: 22px;
-	}
+    /* Anime Review */
+    .anime__review__item__text h6 span {
+        font-size: 22px;
+    }
 
-	.anime__review__item__text {
-		padding: 18px 20px 20px;
-	}
+    .anime__review__item__text {
+        padding: 18px 20px 20px;
+    }
 }
 
 
+
+/* Definindo variáveis de cores e fontes para facilitar a manutenção */
+:root {
+    --primary-color: #008cff;
+    --highlight-color: #a9afff;
+    --accent-color: #ff0000cc;
+    --text-color-light: #d6f9fa;
+    --text-color-dark: rgb(152, 228, 252);
+    --background-overlay: rgba(0, 0, 0, 0.5);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --box-shadow-light: rgba(245, 245, 245, 0.856);
+    --font-size-base: 18px;
+    --font-size-heading: 36px;
+    --font-size-label: 20px;
+    --font-size-title: 28px;
+    --font-weight-bold: bold;
+    --border-radius: 8px;
+}
+
+/* Estilo para o Hero Section */
 .hero__items {
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 600px; /* Altura padrão para todos os banners */
+    height: 60vh; /* Altura responsiva com base na altura da viewport */
     display: flex;
     align-items: center;
-    color: rgb(152, 228, 252); /* Cor padrão do texto */
+    justify-content: center; /* Centraliza o conteúdo */
+    color: var(--text-color-dark);
 }
 
 .hero__text {
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o texto */
-    padding: 20px;
-    border-radius: 8px;
+    background-color: var(--background-overlay);
+    padding: 1.25rem; /* 20px usando rem */
+    border-radius: var(--border-radius);
+    max-width: 90%; /* Limita a largura do texto */
+    text-align: center; /* Centraliza o texto */
 }
 
 .hero__text .label {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    margin-bottom: 10px;
-    color: #a9afff; /* Cor dourada para destaque */
+    margin-bottom: 0.625rem; /* 10px */
+    color: var(--highlight-color);
 }
 
 .hero__text h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    color: #d6f9fa; /* Cor padrão do título */
+    font-size: var(--font-size-heading);
+    margin-bottom: 1rem; /* 15px */
+    color: var(--text-color-light);
 }
 
 .hero__text p {
-    font-size: 18px;
+    font-size: var(--font-size-base);
     line-height: 1.6;
-    color: #d6f9fa; /* Cor do texto do parágrafo */
+    color: var(--text-color-light);
 }
 
-
-
+/* Estilo para a seção de produtos ao vivo */
 .live__product .section-title h4 {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    color: #008cff;
-    margin-bottom: 30px;
-    text-align: center; /* Centraliza o título */
+    color: var(--primary-color);
+    margin-bottom: 1.875rem; /* 30px */
+    text-align: center;
 }
 
+/* Estilo para os itens de produto */
 .product__item {
-    margin-bottom: 50px;
+    margin-bottom: 3rem; /* 50px */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #1d1d1db6;
-    box-shadow: 0 4px 8px rgba(245, 245, 245, 0.856); /* Sombra sutil */
+    background-color: rgba(29, 29, 29, 0.71); /* Cor de fundo mais suave */
+    box-shadow: 0 4px 8px var(--box-shadow-light); /* Sombra sutil */
 }
 
 .product__item:hover {
-    transform: translateY(-10px); /* Eleva o card no hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+    transform: translateY(-0.625rem); /* Eleva o card no hover */
+    box-shadow: 0 8px 16px var(--shadow-color); /* Aumenta a sombra no hover */
 }
 
+/* Estilo para a imagem do produto */
 .product__item__pic {
     height: 300px;
     background-size: cover;
     background-position: center;
-    border-bottom: 5px solid #ff0000cc; /* Borda inferior com cor de destaque */
+    border-bottom: 0.3125rem solid var(--accent-color); /* Borda inferior com cor de destaque */
 }
+
+/* Ajustando para telas menores */
+@media (max-width: 768px) {
+    .hero__items {
+        height: 50vh; /* Menor altura do banner em dispositivos menores */
+    }
+
+    .hero__text h2 {
+        font-size: 28px;
+    }
+
+    .hero__text p {
+        font-size: 16px;
+    }
+
+    .product__item {
+        margin-bottom: 2rem; /* 32px em dispositivos menores */
+    }
+}
+
+@media (max-width: 479px) {
+    .hero__text h2 {
+        font-size: 24px;
+    }
+
+    .hero__text p {
+        font-size: 14px;
+    }
+
+    .product__item__pic {
+        height: 250px; /* Reduz a altura da imagem do produto em telas pequenas */
+    }
+}
+
 
 .product__item__text {
     padding: 15px;
@@ -2506,7 +2601,7 @@ ol {
 .sidebar-item h5 {
     margin: 0; /* Remove a margem padrão dos títulos */
     text-align: center; /* Alinha o texto ao centro */
-    color: #ff0000; /* Cor do texto */
+    color: #d17c7c; /* Cor do texto */
     font-size: 16px; /* Tamanho da fonte */
     font-weight: bold; /* Destaca o texto */
 }
@@ -2628,158 +2723,215 @@ ol {
     font-size: 1.2em;
 }
 
-<title>Progresso das Traduções</title>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-
         /* Estilo do menu de navegação */
-        .navbar {
-            background-color: #333333;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.navbar {
+    background-color: #333333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-right: 15px;
-            font-weight: bold;
-        }
+.navbar a {
+    color: #ff1818;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
 
-        /* Ajuste do contêiner principal */
-        .main-container {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
+/* Ajuste do contêiner principal */
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
 
-        .content {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-        }
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
 
-        /* Contêiner para anúncios e barra de progresso */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000;
-            margin-right: 20px;
-        }
+/* Contêiner para anúncios e barra de progresso */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000; /* Garante que a barra de anúncios fique acima de outros elementos */
+    margin-right: 20px;
+    position: relative; /* Garantir que a sidebar se comporte como esperado em dispositivos móveis */
+}
 
-        /* Botões dos anúncios */
-        .ad-button {
-            width: 220px;
-            height: 50px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            padding: 10px;
-            transition: background-color 0.3s;
-        }
+/* Botões dos anúncios */
+.ad-button {
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
 
-        .ad-discord { background-color: #5865f2; }
-        .ad-twitter { background-color: #1DA1F2; }
-        .ad-patreon { background-color: #FF424D; }
+.ad-discord { background-color: #5865f2; }
+.ad-twitter { background-color: #1DA1F2; }
+.ad-patreon { background-color: #FF424D; }
 
-        /* Hover Effects */
-        .ad-discord:hover { background-color: #940317; }
-        .ad-twitter:hover { background-color: #4f01b6; }
-        .ad-patreon:hover { background-color: #ffda0b; }
+/* Hover Effects */
+.ad-discord:hover { background-color: #940317; }
+.ad-twitter:hover { background-color: #4f01b6; }
+.ad-patreon:hover { background-color: #ffda0b; }
 
-        .progress-section {
-            background-color: #1e1e2f;
-            padding: 30px;
-            border-radius: 12px;
-            width: 300px;
-            box-shadow: 0px 4px 15px rgb(255, 255, 255);
-        }
+.progress-section {
+    background-color: #1e1e2f;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0px 4px 15px rgb(255, 255, 255);
+}
 
-        .progress-section h2 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #ffcc00;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.progress-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .game-progress {
-            margin-bottom: 25px;
-        }
+.game-progress {
+    margin-bottom: 25px;
+}
 
-        .game-progress h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #ffffff;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+.game-progress h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        .progress-bar-container {
-            background-color: #292942;
-            border-radius: 25px;
-            overflow: hidden;
-            height: 16px;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
+.progress-bar-container {
+    background-color: #292942;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 16px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
 
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #ff0a0a, #00b3ff);
-            border-radius: 25px;
-            transition: width 0.6s ease;
-            box-shadow: 0 4px 10px rgba(243, 243, 243, 0.4);
-        }
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0a0a, #00b3ff);
+    border-radius: 25px;
+    transition: width 0.6s ease;
+    box-shadow: 0 4px 10px rgba(243, 243, 243, 0.4);
+}
 
-        .progress-bar-container::before {
-            content: attr(data-progress) "%";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 12px;
-            color: #fff;
-            font-weight: bold;
-            z-index: 1;
-        }
+.progress-bar-container::before {
+    content: attr(data-progress) "%";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1;
+}
 
-        .game-progress p {
-            text-align: right;
-            margin-top: 5px;
-            font-size: 12px;
-            color: #bbbbbb;
-        }
+.game-progress p {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #bbbbbb;
+}
 
-        /* Adiciona um efeito de brilho ao texto */
-        .game-progress h3, .progress-section h2 {
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.3);
-        }
+/* Adiciona um efeito de brilho ao texto */
+.game-progress h3, .progress-section h2 {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.3);
+}
 
-		 /* Estilos específicos para dispositivos móveis */
-        @media (max-width: 768px) {
-            .sidebar {
-                display: none; /* Esconder barra de progresso no celular */
+/* Estilos específicos para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Escondendo a barra de progresso, mas mantendo os botões */
+    .sidebar .progress-section {
+        display: none; /* Esconde apenas a barra de progresso */
+    }
 
-				
+    /* Garantir que os botões não sejam escondidos e fiquem acessíveis */
+    .ad-button {
+        width: 100%; /* Faz os botões se ajustarem à largura da tela em dispositivos móveis */
+        margin-bottom: 10px; /* Espaçamento entre os botões */
+    }
+}
 
-		}
+/* Adicionando um efeito de suavização no container da sidebar para melhorar a transição */
+.sidebar-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 9999;
+    transition: all 0.3s ease; /* Suaviza o efeito ao exibir/ocultar */
+}
+
+/* Estilo dos itens no sidebar */
+.sidebar-item {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sidebar-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-item h5 {
+    margin: 0;
+    text-align: center;
+    color: #d17c7c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Créditos */
+.sidebar-credits {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 0, 0.6));
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(207, 186, 186, 0.63);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de iluminação */
+.sidebar-credits::before {
+    content: "";
+    position: absol
+
+}
 
 
 		@media only screen and (max-width: 768px) {
@@ -2895,4 +3047,4 @@ ol {
 		}
 
 
-		
+	}
