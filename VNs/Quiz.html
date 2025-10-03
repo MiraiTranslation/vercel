@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Poema Neon Avançado</title>
+    <style>
+      body {
+        font-family: "Arial Black", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        overflow: hidden;
+        transition: background 0.3s;
+      }
+
+      .container {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        z-index: 1;
+        position: relative;
+      }
+
+      .quiz-container {
+        background-color: #111;
+        border: 2px solid #00f;
+        border-radius: 15px;
+        padding: 30px;
+        width: 350px;
+        box-shadow: 0 0 20px #00f;
+        z-index: 2;
+        position: relative;
+      }
+
+      .question {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+      .options button {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px;
+        font-size: 1em;
+        cursor: pointer;
+        background-color: #000;
+        color: #00f;
+        border: 2px solid #00f;
+        border-radius: 10px;
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .options button:hover {
+        color: #000;
+        background: linear-gradient(90deg, #00f, #0ff);
+        box-shadow: 0 0 15px #0ff, 0 0 30px #00f;
+      }
+
+      #poema {
+        background-color: #111;
+        border: 2px solid rgb(250, 250, 250);
+        border-radius: 15px;
+        padding: 30px;
+        width: 350px;
+        font-size: 1.2em;
+        white-space: pre-line;
+        box-shadow: 0 0 20px #00f;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 2;
+        position: relative;
+
+        /* NOVO: permite rolagem quando o poema for maior */
+        max-height: 500px; /* ajuste conforme desejar */
+        overflow-y: auto;
+      }
+
+      .verso {
+        display: none;
+        opacity: 0;
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 5px #00f, 0 0 10px #0ff, 0 0 20px #00f;
+        transform: translateX(-20px);
+        transition: opacity 1s ease, transform 0.8s ease, text-shadow 0.8s ease;
+      }
+
+      .verso.show {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+        animation: neonGlow 1.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes neonGlow {
+        from {
+          text-shadow: 0 0 5px #00f, 0 0 10px #0ff, 0 0 20px #00f;
+        }
+        to {
+          text-shadow: 0 0 15px #0ff, 0 0 30px #00f, 0 0 40px #0ff;
+        }
+      }
+
+      @keyframes flash {
+        0%,
+        100% {
+          background: #000;
+        }
+        50% {
+          background: var(--flash-color);
+        }
+      }
+
+      /* Partículas e confete */
+      .particle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.7;
+        background: #00f;
+        width: 5px;
+        height: 5px;
+        animation: float 10s linear infinite;
+        z-index: 0;
+      }
+      .confetti {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #0ff;
+        border-radius: 50%;
+        z-index: 5;
+        animation: confettiFall 1s ease-out forwards;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0) scale(1);
+        }
+        50% {
+          transform: translateY(-300px) translateX(50px) scale(1.5);
+        }
+        100% {
+          transform: translateY(-600px) translateX(-50px) scale(1);
+        }
+      }
+      @keyframes confettiFall {
+        0% {
+          opacity: 1;
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(300px) rotate(360deg);
+        }
+      }
+
+      /* Música control */
+      #music-control {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+        cursor: pointer;
+        background: #111;
+        color: #0ff;
+        border: 2px solid #0ff;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-weight: bold;
+        box-shadow: 0 0 10px #0ff;
+      }
+
+      @media (max-width: 800px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+        .quiz-container,
+        #poema {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz-container">
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+      </div>
+      <div id="poema">
+        <div class="verso" id="verso-0">
+          "Nesse mundo horrível, sozinho caminhei, Não ligava a muito, apenas
+          existi, Mas aos poucos algumas almas encontrei, E aprendi a sentir, a
+          dar, a ouvir, a sorrir."
+        </div>
+
+        <div class="verso" id="verso-1">
+          "Momentos de alegria surgiam, efêmeros, Mas sempre vinham os
+          tormentos, as dores, Perdi quem conheci, e me fechei nos esgotos De um
+          isolamento que me parecia amor."
+        </div>
+
+        <div class="verso" id="verso-2">
+          "A raiva me sustentou, firme e cruel, Ódio das pessoas que fizeram
+          podre o mundo, Mas nem a fúria acalmou meu véu De dor pela perda, pelo
+          vazio profundo."
+        </div>
+
+        <div class="verso" id="verso-3">
+          "Decidi tentar de novo, abrir meu coração, Conhecer pessoas, por mim e
+          por ela, E algumas amizades floresceram, então, Até que o mal se
+          revelou em forma singela."
+        </div>
+
+        <div class="verso" id="verso-4">
+          "Conheci o ser humano mais vil e sombrio, Máscaras ocultavam o que eu
+          não via, Entreguei-me ao engano, e no frio, Construi uma vida que
+          pensei que existia."
+        </div>
+
+        <div class="verso" id="verso-5">
+          "Mas aos poucos, a segurança desmoronou, Meu porto seguro se tornou
+          tempestade, Brigas, imposições, o controle dominou, E o amor que senti
+          virou amarga realidade."
+        </div>
+
+        <div class="verso" id="verso-6">
+          "Perdi sem perceber, e mesmo aliviado, Ela espalhou mentiras, veneno
+          no ar, Quase me matou com ódio disfarçado, E o medo de sair começou a
+          me dominar."
+        </div>
+
+        <div class="verso" id="verso-7">
+          "Volta e meia, criava dores, me fazia pequeno, Meu mundo se encolhia,
+          e não havia solução. Tentei resistir, mas era terreno Que se afundava
+          sob perseguição."
+        </div>
+
+        <div class="verso" id="verso-8">
+          "Agora busco o isolamento, minha fortaleza, Para que não destrua minha
+          vida outra vez, Para que a sombra não persista com frieza, E para que
+          minha alma um dia encontre a vez."
+        </div>
+
+        <div class="verso" id="verso-9">
+          "O ódio, a dor, a perda e o engano Cresceram comigo, marcas no
+          coração, Mas talvez, no silêncio do humano plano, Eu encontre um
+          caminho, ou apenas solidão."
+        </div>
+      </div>
+    </div>
+
+    <button id="music-control">🎵 Ligar Música</button>
+    <button id="download-poema" style="display: none">⬇️ Baixar Poema</button>
+
+    <!-- Sons -->
+    <audio
+      id="correct1"
+      src="https://www.soundjay.com/buttons/sounds/button-3.mp3"
+    ></audio>
+    <audio
+      id="correct2"
+      src="https://www.soundjay.com/buttons/sounds/button-4.mp3"
+    ></audio>
+    <audio
+      id="correct3"
+      src="https://www.soundjay.com/buttons/sounds/button-5.mp3"
+    ></audio>
+    <audio
+      id="wrong"
+      src="https://www.soundjay.com/buttons/sounds/button-10.mp3"
+    ></audio>
+    <audio
+      id="verse"
+      src="https://www.soundjay.com/buttons/sounds/button-16.mp3"
+    ></audio>
+    <audio
+      id="bg"
+      src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+      loop
+    ></audio>
+
+    <script>
+      const quiz = [
+        {
+          question: "Qual é a capital do Brasil?",
+          options: ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador"],
+          answer: 2,
+        },
+        {
+          question: "Qual é a cor do céu em um dia claro?",
+          options: ["Azul", "Verde", "Vermelho", "Amarelo"],
+          answer: 0,
+        },
+        {
+          question: "Qual animal é conhecido como rei da selva?",
+          options: ["Elefante", "Leão", "Tigre", "Cavalo"],
+          answer: 1,
+        },
+        {
+          question: "Quantos dias tem um ano bissexto?",
+          options: ["365", "366", "364", "360"],
+          answer: 1,
+        },
+        {
+          question: "Qual é a maior floresta tropical do mundo?",
+          options: ["Amazônia", "Congo", "Taiga", "Savana"],
+          answer: 0,
+        },
+        {
+          question: "Qual é o planeta mais próximo do Sol?",
+          options: ["Mercúrio", "Vênus", "Terra", "Marte"],
+          answer: 0,
+        },
+        {
+          question: "Quem pintou a Mona Lisa?",
+          options: ["Van Gogh", "Leonardo da Vinci", "Picasso", "Michelangelo"],
+          answer: 1,
+        },
+        {
+          question: "Qual é a velocidade da luz aproximada?",
+          options: [
+            "300 mil km/s",
+            "150 mil km/s",
+            "1 milhão km/s",
+            "100 mil km/s",
+          ],
+          answer: 0,
+        },
+        {
+          question: "Qual é o maior oceano da Terra?",
+          options: ["Atlântico", "Pacífico", "Índico", "Ártico"],
+          answer: 1,
+        },
+        {
+          question: "Quem escreveu 'Dom Casmurro'?",
+          options: [
+            "Machado de Assis",
+            "José de Alencar",
+            "Clarice Lispector",
+            "Carlos Drummond",
+          ],
+          answer: 0,
+        },
+      ];
+
+      let currentQuestion = 0;
+      const questionEl = document.getElementById("question");
+      const optionsEl = document.getElementById("options");
+      const correctSounds = [
+        document.getElementById("correct1"),
+        document.getElementById("correct2"),
+        document.getElementById("correct3"),
+      ];
+      const wrongSound = document.getElementById("wrong");
+      const verseSound = document.getElementById("verse");
+      const bgMusic = document.getElementById("bg");
+      const musicControl = document.getElementById("music-control");
+      const downloadBtn = document.getElementById("download-poema");
+
+      // Partículas
+      for (let i = 0; i < 50; i++) {
+        const p = document.createElement("div");
+        p.classList.add("particle");
+        p.style.left = Math.random() * window.innerWidth + "px";
+        p.style.top = Math.random() * window.innerHeight + "px";
+        p.style.width = Math.random() * 4 + 2 + "px";
+        p.style.height = Math.random() * 4 + 2 + "px";
+        p.style.animationDuration = Math.random() * 10 + 5 + "s";
+        document.body.appendChild(p);
+      }
+
+      function showQuestion() {
+        const q = quiz[currentQuestion];
+        questionEl.textContent = q.question;
+        optionsEl.innerHTML = "";
+        q.options.forEach((opt, i) => {
+          const btn = document.createElement("button");
+          btn.textContent = opt;
+          btn.onclick = () => checkAnswer(i);
+          optionsEl.appendChild(btn);
+        });
+      }
+
+      function flashPage(color) {
+        document.body.style.setProperty("--flash-color", color);
+        document.body.style.animation = "flash 0.4s";
+        setTimeout(() => {
+          document.body.style.animation = "";
+        }, 400);
+      }
+
+      function showVerso(index) {
+        const verso = document.getElementById(`verso-${index}`);
+        if (verso) {
+          verso.classList.add("show");
+          verseSound.currentTime = 0;
+          verseSound.play();
+        }
+      }
+
+      function spawnConfetti() {
+        for (let i = 0; i < 15; i++) {
+          const c = document.createElement("div");
+          c.classList.add("confetti");
+          c.style.left = Math.random() * window.innerWidth + "px";
+          document.body.appendChild(c);
+          setTimeout(() => c.remove(), 1000);
+        }
+      }
+
+      function checkAnswer(selected) {
+        if (selected === quiz[currentQuestion].answer) {
+          const s =
+            correctSounds[Math.floor(Math.random() * correctSounds.length)];
+          s.currentTime = 0;
+          s.play();
+          flashPage("blue");
+          showVerso(currentQuestion);
+          spawnConfetti();
+        } else {
+          wrongSound.currentTime = 0;
+          wrongSound.play();
+          flashPage("red");
+        }
+        currentQuestion++;
+        if (currentQuestion < quiz.length) {
+          setTimeout(showQuestion, 500);
+        } else {
+          setTimeout(() => {
+            questionEl.textContent = "Quiz concluído!";
+            optionsEl.style.display = "none";
+            downloadBtn.style.display = "block"; // mostrar botão de download
+          }, 500);
+        }
+      }
+
+      function downloadPoema() {
+        let versos = document.querySelectorAll("#poema .verso");
+        let texto = "";
+        versos.forEach((v) => {
+          texto += v.textContent + "\n\n";
+        });
+        const blob = new Blob([texto], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Soneto_Sombrio.txt";
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      downloadBtn.addEventListener("click", downloadPoema);
+
+      musicControl.addEventListener("click", () => {
+        if (bgMusic.paused) {
+          bgMusic.play();
+          musicControl.textContent = "🎵 Desligar Música";
+        } else {
+          bgMusic.pause();
+          musicControl.textContent = "🎵 Ligar Música";
+        }
+      });
+
+      showQuestion();
+    </script>
+  </body>
+</html>
